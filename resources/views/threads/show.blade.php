@@ -25,5 +25,23 @@
             @endforeach
         </div>
     </div>
+
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            @if (auth()->check())
+                <form method="POST" action="{{ $thread->path() . '/replies' }}">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <textarea name="body" id="body" rows="5" class="form-control" placeholder="Reply here"></textarea>
+                        <button type="submit" class="btn btn-default">Post</button>
+                    </div>
+                </form>
+            @else
+                <p class="text-center">Please <a href="{{ route('login') }}">sign in</a> to add replies</p>
+            @endif
+        </div>
+    </div>
+
 </div>
 @endsection

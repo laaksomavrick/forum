@@ -25,7 +25,6 @@ class ThreadTest extends TestCase
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->thread->replies);
     }
 
-
     /**
      * @test
      */
